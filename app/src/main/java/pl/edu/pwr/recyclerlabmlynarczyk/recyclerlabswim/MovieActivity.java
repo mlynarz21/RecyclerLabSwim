@@ -34,8 +34,8 @@ public class MovieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie);
         ButterKnife.bind(this);
         setData();
-        ActionBar a = getSupportActionBar();
-        a.setDisplayHomeAsUpEnabled(false);
+//        ActionBar a = getSupportActionBar();
+//        a.setDisplayHomeAsUpEnabled(false);
     }
 
     private void setData() {

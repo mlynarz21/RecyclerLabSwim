@@ -9,7 +9,7 @@ import android.os.Parcelable;
  * Created by mlyna on 09.04.2017.
  */
 
-public class Movie{
+public class Movie implements Parcelable{
     private String title, genre, year;
     private Drawable image;
     private int imageId;
@@ -28,21 +28,38 @@ public class Movie{
         mark=false;
     }
 
-//    private Creator(Parcel in){
-//        this()
-//    }
-//
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(title);
-//        dest.writeString(genre);
-//        dest.writeString(year);
-//    }
-//
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
+    public Movie(Parcel in){
+        title=in.readString();
+        genre=in.readString();
+        year=in.readString();
+        imageId=in.readInt();
+        rating= in.readFloat();
+        mark= in.readInt()==1;
+    }
+
+    public static Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>(){
+        public Movie createFromParcel(Parcel in){
+            return new Movie(in);
+        }
+        public Movie[] newArray(int size){
+            return new Movie[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(genre);
+        dest.writeString(year);
+        dest.writeInt(imageId);
+        dest.writeFloat(rating);
+        dest.writeInt(mark?1:0);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
     public String getTitle() {
         return title;

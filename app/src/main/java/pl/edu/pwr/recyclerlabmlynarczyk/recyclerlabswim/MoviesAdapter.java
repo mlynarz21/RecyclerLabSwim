@@ -44,13 +44,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         public void onClick(View v){
             Intent it = new Intent(context, MovieActivity.class);
             it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             it.putExtra(context.getString(R.string.title),title.getText().toString());
             it.putExtra(context.getString(R.string.genre),genre.getText().toString());
             it.putExtra(context.getString(R.string.year),year.getText().toString());
             it.putExtra(context.getString(R.string.img_txt),Integer.parseInt(filmImg.getTag().toString()));
             it.putExtra(context.getString(R.string.rating),moviesList.get(getAdapterPosition()).getRating());
-            context.startActivity(it);
+            it.putExtra(context.getString(R.string.position),getAdapterPosition());
+            ((Activity) context).startActivityForResult(it,1);
         }
         @Override
         public boolean onLongClick(View v){
@@ -85,12 +85,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         public void onClick(View v){
             Intent it = new Intent(context, MovieActivity.class);
             it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             it.putExtra(context.getString(R.string.title),title.getText().toString());
             it.putExtra(context.getString(R.string.genre),genre.getText().toString());
             it.putExtra(context.getString(R.string.year),year.getText().toString());
             it.putExtra(context.getString(R.string.img_txt),Integer.parseInt(filmImg.getTag().toString()));
             it.putExtra(context.getString(R.string.rating),moviesList.get(getAdapterPosition()).getRating());
+            it.putExtra(context.getString(R.string.position),getAdapterPosition());
             ((Activity) context).startActivityForResult(it,1);
         }
         @Override
@@ -159,6 +159,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 viewHolder.year.setText(movie.getYear());
                 viewHolder.filmImg.setImageDrawable(context.getDrawable(movie.getImageId()));
                 viewHolder.filmImg.setTag(movie.getImageId());
+                if(movie.isMark())
+                    viewHolder.eyeImage.setVisibility(View.VISIBLE);
             }
             break;
 
@@ -169,6 +171,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 viewHolder.year.setText(movie.getYear());
                 viewHolder.filmImg.setImageDrawable(context.getDrawable(movie.getImageId()));
                 viewHolder.filmImg.setTag(movie.getImageId());
+                if(movie.isMark())
+                    viewHolder.eyeImage.setVisibility(View.VISIBLE);
             }
             break;
         }

@@ -14,7 +14,6 @@ import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        if(savedInstanceState!=null) {
+            movieList = savedInstanceState.getParcelableArrayList(movies);
+        }
+        else {prepareMovieData();}
         mAdapter = new MoviesAdapter(movieList, MainActivity.this);
-//        if(savedInstanceState!=null){
-//            movieList= savedInstanceState.getParcelableArrayList(movies);
-//        }
         setRecyclerView();
-        prepareMovieData();
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(setSimpleItemTouchCallback());
         itemTouchHelper.attachToRecyclerView(recyclerView);
     }
@@ -44,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //mAdapter.setItemRating(data.getIntExtra(position, 0), data.getFloatExtra(rating, 0.0f));
+        mAdapter.setItemRating(data.getIntExtra(position, 0), data.getFloatExtra(rating, 0.0f));
     }
 
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        outState.putParcelableArrayList(movies,movieList);
-//        super.onSaveInstanceState(outState);
-//    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList(movies,movieList);
+        super.onSaveInstanceState(outState);
+    }
 
     private ItemTouchHelper.SimpleCallback setSimpleItemTouchCallback() {
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
