@@ -26,7 +26,7 @@ public class MovieActivity extends AppCompatActivity {
     @BindString(R.string.genre) String genre;
     @BindString(R.string.img_txt) String img;
     @BindString(R.string.rating) String rating;
-    @BindString(R.string.positon) String positon;
+    @BindString(R.string.position) String position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +47,10 @@ public class MovieActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent();
-        intent.putExtra(positon,getIntent().getIntExtra(positon,0));
-        intent.putExtra(rating,ratingBar.getRating());
-        setResult(RESULT_OK,intent);
+        Intent it = new Intent();
+        it.putExtra(position,getIntent().getIntExtra(position,0));
+        it.putExtra(rating,ratingBar.getRating());
+        setResult(RESULT_OK,it);
         finish();
     }
 

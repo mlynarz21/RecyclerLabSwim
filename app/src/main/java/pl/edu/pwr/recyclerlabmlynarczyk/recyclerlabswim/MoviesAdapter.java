@@ -4,6 +4,7 @@ package pl.edu.pwr.recyclerlabmlynarczyk.recyclerlabswim;
  * Created by mlyna on 09.04.2017.
  */
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -90,7 +91,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             it.putExtra(context.getString(R.string.year),year.getText().toString());
             it.putExtra(context.getString(R.string.img_txt),Integer.parseInt(filmImg.getTag().toString()));
             it.putExtra(context.getString(R.string.rating),moviesList.get(getAdapterPosition()).getRating());
-            context.startActivity(it);
+            ((Activity) context).startActivityForResult(it,1);
         }
         @Override
         public boolean onLongClick(View v){

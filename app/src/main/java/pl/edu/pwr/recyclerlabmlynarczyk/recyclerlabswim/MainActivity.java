@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.recycler_view) RecyclerView recyclerView;
     @BindString(R.string.rating) String rating;
-    @BindString(R.string.positon) String positon;
+    @BindString(R.string.position) String position;
     @BindString(R.string.movies) String movies;
 
     private ArrayList<Movie> movieList = new ArrayList<>();
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mAdapter = new MoviesAdapter(movieList, getApplicationContext());
+        mAdapter = new MoviesAdapter(movieList, MainActivity.this);
 //        if(savedInstanceState!=null){
 //            movieList= savedInstanceState.getParcelableArrayList(movies);
 //        }
@@ -44,8 +44,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        mAdapter.setItemRating(data.getIntExtra(positon,0),data.getFloatExtra(rating,0.0f));
-        mAdapter.notifyDataSetChanged();
+        //mAdapter.setItemRating(data.getIntExtra(position, 0), data.getFloatExtra(rating, 0.0f));
     }
 
 //    @Override
@@ -71,13 +70,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void setRecyclerView() {
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
