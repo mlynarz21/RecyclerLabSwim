@@ -33,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         if(savedInstanceState!=null) {
             movieList = savedInstanceState.getParcelableArrayList(movies);
         }
-        else {prepareMovieData();}
-        mAdapter = new MoviesAdapter(movieList, MainActivity.this);
+        else {
+            prepareMovieData();
+        }
         setRecyclerView();
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(setSimpleItemTouchCallback());
         itemTouchHelper.attachToRecyclerView(recyclerView);
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setRecyclerView() {
+        mAdapter = new MoviesAdapter(movieList, MainActivity.this);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -141,7 +143,8 @@ public class MainActivity extends AppCompatActivity {
         movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014",R.drawable.dory);
         movieList.add(movie);
 
-        mAdapter.notifyDataSetChanged();
+        if(mAdapter!=null)
+            mAdapter.notifyDataSetChanged();
     }
 }
 
