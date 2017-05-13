@@ -13,8 +13,8 @@ public class Movie implements Parcelable{
     private String title, genre, year;
     private Drawable image;
     private int imageId;
-    float rating;
-    boolean mark;
+    private float rating;
+    private boolean mark;
 
     public Movie() {
     }

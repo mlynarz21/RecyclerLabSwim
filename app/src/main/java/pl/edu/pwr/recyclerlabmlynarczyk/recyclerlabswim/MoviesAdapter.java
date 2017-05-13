@@ -145,7 +145,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     public void setItemRating(int position,float rating){
-        moviesList.get(position).rating = rating;
+        moviesList.get(position).setRating(rating);
     }
 
     @Override
@@ -161,6 +161,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 viewHolder.filmImg.setTag(movie.getImageId());
                 if(movie.isMark())
                     viewHolder.eyeImage.setVisibility(View.VISIBLE);
+                else {
+                    viewHolder.eyeImage.setVisibility(View.GONE);
+                }
             }
             break;
 
@@ -173,6 +176,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 viewHolder.filmImg.setTag(movie.getImageId());
                 if(movie.isMark())
                     viewHolder.eyeImage.setVisibility(View.VISIBLE);
+                else {
+                    viewHolder.eyeImage.setVisibility(View.GONE);
+                }
             }
             break;
         }
