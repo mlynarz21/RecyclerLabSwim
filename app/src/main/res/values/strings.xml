@@ -9,4 +9,6 @@
     <string name="img_txt">img</string>
     <string name="position">position</string>
     <string name="movies">movies</string>
+    <string name="desc">description</string>
+    <string name="actors">Aktorzy:</string>
 </resources>

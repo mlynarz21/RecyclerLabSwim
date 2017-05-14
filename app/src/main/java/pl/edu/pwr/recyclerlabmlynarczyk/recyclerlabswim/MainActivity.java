@@ -98,49 +98,43 @@ public class MainActivity extends AppCompatActivity {
         Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015",R.drawable.dory);
         movieList.add(movie);
 
-        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.drawable.dory);
+        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.drawable.inside);
         movieList.add(movie);
 
-        movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015",R.drawable.dory);
+        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.shaun);
         movieList.add(movie);
 
-        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.dory);
+        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015",R.drawable.maritian);
         movieList.add(movie);
 
-        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015",R.drawable.dory);
+        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015",R.drawable.misson);
         movieList.add(movie);
 
-        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015",R.drawable.dory);
+        movie = new Movie("Up", "Animation", "2009",R.drawable.up);
         movieList.add(movie);
 
-        movie = new Movie("Up", "Animation", "2009",R.drawable.dory);
+        movie = new Movie("The LEGO Movie", "Animation", "2014",R.drawable.lego);
         movieList.add(movie);
 
-        movie = new Movie("Star Trek", "Science Fiction", "2009",R.drawable.dory);
+        movie = new Movie("Iron Man", "Action & Adventure", "2008",R.drawable.ironman);
         movieList.add(movie);
 
-        movie = new Movie("The LEGO Movie", "Animation", "2014",R.drawable.dory);
+        movie = new Movie("Aliens", "Science Fiction", "1986",R.drawable.aliens);
         movieList.add(movie);
 
-        movie = new Movie("Iron Man", "Action & Adventure", "2008",R.drawable.dory);
+        movie = new Movie("Chicken Run", "Animation", "2000",R.drawable.chicken);
         movieList.add(movie);
 
-        movie = new Movie("Aliens", "Science Fiction", "1986",R.drawable.dory);
+        movie = new Movie("Back to the Future", "Science Fiction", "1985",R.drawable.back);
         movieList.add(movie);
 
-        movie = new Movie("Chicken Run", "Animation", "2000",R.drawable.dory);
+        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981",R.drawable.raiders);
         movieList.add(movie);
 
-        movie = new Movie("Back to the Future", "Science Fiction", "1985",R.drawable.dory);
+        movie = new Movie("Goldfinger", "Action & Adventure", "1965",R.drawable.goldfinge);
         movieList.add(movie);
 
-        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981",R.drawable.dory);
-        movieList.add(movie);
-
-        movie = new Movie("Goldfinger", "Action & Adventure", "1965",R.drawable.dory);
-        movieList.add(movie);
-
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014",R.drawable.dory);
+        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014",R.drawable.guardians);
         movieList.add(movie);
 
         if(mAdapter!=null)

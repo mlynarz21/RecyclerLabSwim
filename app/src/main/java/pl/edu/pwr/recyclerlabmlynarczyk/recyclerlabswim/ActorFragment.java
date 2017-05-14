@@ -15,7 +15,7 @@ public class ActorFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.images_fragment_layout, container, false);
+        View view = inflater.inflate(R.layout.actor_fragment_layout, container, false);
         return view;
     }
 }

@@ -1,7 +1,6 @@
 package pl.edu.pwr.recyclerlabmlynarczyk.recyclerlabswim;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
-import butterknife.BindView;
 
 /**
  * Created by mlyna on 13.05.2017.
@@ -31,22 +28,32 @@ public class MovieFragment extends Fragment {
         textDesc= (TextView) view.findViewById(R.id.textview_desc);
         imageViewDesc= (ImageView) view.findViewById(R.id.image_view_desc);
         titleDesc= (TextView) view.findViewById(R.id.title_desc);
+        setData();
+
+        imageViewDesc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImagesFragment imagesFragment = new ImagesFragment();
+                ActorFragment actorFragment = new ActorFragment();
+                android.app.FragmentManager fragmentManager = getFragmentManager();
+                android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container,imagesFragment);
+                fragmentTransaction.add(R.id.fragment_container2,actorFragment);
+                fragmentTransaction.commit();
+            }
+        });
         return view;
     }
 
-    public RatingBar getRatingbar() {
-        return ratingBar;
+        private void setData() {
+            Bundle bundle = getArguments();
+            titleDesc.setText(bundle.getString(getResources().getString(R.string.title)));
+            textDesc.setText(bundle.getString(getResources().getString(R.string.desc)));
+            imageViewDesc.setImageDrawable(getResources().getDrawable(bundle.getInt(getResources().getString(R.string.img_txt))));
+            ratingBar.setRating(bundle.getFloat(getResources().getString(R.string.rating)));
     }
 
-    public TextView getTextDesc() {
-        return textDesc;
-    }
-
-    public ImageView geImageViewDesc() {
-        return imageViewDesc;
-    }
-
-    public TextView getTitleDesc() {
-        return titleDesc;
+    public float getRating() {
+        return ratingBar.getRating();
     }
 }
