@@ -5,6 +5,8 @@ import android.media.Image;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+
 /**
  * Created by mlyna on 09.04.2017.
  */
@@ -16,16 +18,25 @@ public class Movie implements Parcelable{
     private float rating;
     private boolean mark;
 
+    public int[] getImgs() {
+        return imgs;
+    }
+
+    int imgs[];
+    String actors[];
+
     public Movie() {
     }
 
-    public Movie(String title, String genre, String year, int imageId) {
+    public Movie(String title, String genre, String year, int imageId,int imgs[], String actors[]) {
         this.title = title;
         this.genre = genre;
         this.year = year;
         this.imageId = imageId;
         rating=0;
         mark=false;
+        this.actors=actors;
+        this.imgs= imgs;
     }
 
     public Movie(Parcel in){
@@ -54,6 +65,8 @@ public class Movie implements Parcelable{
         dest.writeInt(imageId);
         dest.writeFloat(rating);
         dest.writeInt(mark?1:0);
+        dest.writeIntArray(imgs);
+        dest.writeStringArray(actors);
     }
 
     @Override
@@ -115,5 +128,15 @@ public class Movie implements Parcelable{
 
     public void setMark(boolean mark) {
         this.mark = mark;
+    }
+    public void setImgs(int[] imgs) {
+        this.imgs = imgs;
+    }
+    public String[] getActors() {
+        return actors;
+    }
+
+    public void setActors(String[] actors) {
+        this.actors = actors;
     }
 }

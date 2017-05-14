@@ -50,6 +50,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             it.putExtra(context.getString(R.string.img_txt),Integer.parseInt(filmImg.getTag().toString()));
             it.putExtra(context.getString(R.string.rating),moviesList.get(getAdapterPosition()).getRating());
             it.putExtra(context.getString(R.string.position),getAdapterPosition());
+            it.putExtra(context.getString(R.string.actorsArr),moviesList.get(getAdapterPosition()).getActors());
+            it.putExtra(context.getString(R.string.imgsArr),moviesList.get(getAdapterPosition()).getImgs());
             ((Activity) context).startActivityForResult(it,1);
         }
         @Override
@@ -91,6 +93,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             it.putExtra(context.getString(R.string.img_txt),Integer.parseInt(filmImg.getTag().toString()));
             it.putExtra(context.getString(R.string.rating),moviesList.get(getAdapterPosition()).getRating());
             it.putExtra(context.getString(R.string.position),getAdapterPosition());
+            it.putExtra(context.getString(R.string.actorsArr),moviesList.get(getAdapterPosition()).getActors());
+            it.putExtra(context.getString(R.string.imgsArr),moviesList.get(getAdapterPosition()).getImgs());
             ((Activity) context).startActivityForResult(it,1);
         }
         @Override

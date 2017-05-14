@@ -15,6 +15,8 @@ public class MovieActivity extends AppCompatActivity {
     @BindString(R.string.rating) String rating;
     @BindString(R.string.position) String position;
     @BindString(R.string.desc) String desc;
+    @BindString(R.string.actorsArr) String actorsArr;
+    @BindString(R.string.imgsArr) String imgsArr;
     MovieFragment movieFragment;
 
     @Override
@@ -27,6 +29,8 @@ public class MovieActivity extends AppCompatActivity {
         bundle.putString(desc,genre+":"+getIntent().getExtras().getString(genre)+" "+year+":"+getIntent().getExtras().getString(year));
         bundle.putInt(img,getIntent().getExtras().getInt(img));
         bundle.putFloat(rating,getIntent().getFloatExtra(rating,0.0f));
+        bundle.putStringArray(actorsArr,getIntent().getStringArrayExtra(actorsArr));
+        bundle.putIntArray(imgsArr,getIntent().getIntArrayExtra(imgsArr));
         movieFragment = new MovieFragment();
         movieFragment.setArguments(bundle);
         android.app.FragmentManager fragmentManager = getFragmentManager();

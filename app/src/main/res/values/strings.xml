@@ -11,4 +11,6 @@
     <string name="movies">movies</string>
     <string name="desc">description</string>
     <string name="actors">Aktorzy:</string>
+    <string name="actorsArr">actorsArr</string>
+    <string name="imgsArr">imgsArr</string>
 </resources>

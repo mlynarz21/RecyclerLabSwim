@@ -33,8 +33,16 @@ public class MovieFragment extends Fragment {
         imageViewDesc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle outBundle1 = new Bundle();
+                Bundle outBundle2 = new Bundle();
+                outBundle2.putStringArray(getResources().getString(R.string.actorsArr),getArguments().getStringArray(getResources().getString(R.string.actorsArr)));
+                outBundle2.putIntArray(getResources().getString(R.string.imgsArr),getArguments().getIntArray(getResources().getString(R.string.imgsArr)));
+                outBundle1.putIntArray(getResources().getString(R.string.imgsArr),getArguments().getIntArray(getResources().getString(R.string.imgsArr)));
                 ImagesFragment imagesFragment = new ImagesFragment();
                 ActorFragment actorFragment = new ActorFragment();
+                imagesFragment.setArguments(outBundle1);
+                actorFragment.setArguments(outBundle2);
+                actorFragment.setArguments(outBundle2);
                 android.app.FragmentManager fragmentManager = getFragmentManager();
                 android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container,imagesFragment);
