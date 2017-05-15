@@ -10,9 +10,6 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-/**
- * Created by mlyna on 13.05.2017.
- */
 
 public class MovieFragment extends Fragment {
     RatingBar ratingBar;
