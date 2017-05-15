@@ -45,7 +45,7 @@ public class MovieFragment extends Fragment {
                 actorFragment.setArguments(outBundle2);
                 android.app.FragmentManager fragmentManager = getFragmentManager();
                 android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container,imagesFragment);
+                fragmentTransaction.replace(R.id.fragment_container,imagesFragment, getString(R.string.change_flag));
                 fragmentTransaction.add(R.id.fragment_container2,actorFragment);
                 fragmentTransaction.commit();
             }
@@ -63,5 +63,9 @@ public class MovieFragment extends Fragment {
 
     public float getRating() {
         return ratingBar.getRating();
+    }
+
+    public void setRating(float rating) {
+        ratingBar.setRating(rating);
     }
 }

@@ -13,4 +13,5 @@
     <string name="actors">Aktorzy:</string>
     <string name="actorsArr">actorsArr</string>
     <string name="imgsArr">imgsArr</string>
+    <string name="change_flag">CHANGE_FLAG</string>
 </resources>
