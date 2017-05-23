@@ -95,6 +95,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void prepareMovieData() {
+
+        String actorSet[] = new String[10];
+        actorSet[0]= "Christian Bale";
+        actorSet[1]= "Robert Downey Jr.";
+        actorSet[2]= "Nicolas Cage";
+        actorSet[3]= "Antonio Banderas";
+        actorSet[4]= "Johnny Depp";
+        actorSet[5]= "Orlando Bloom";
+        actorSet[6]= "Robert De Niro";
+        actorSet[7]= "Jack Nicholson";
+        actorSet[8]= "Marlon Brando";
+        actorSet[9]= "Al Pacino";
+
         int imageSet1[] = new int[9];
         imageSet1[0] = R.drawable.scene11;
         imageSet1[1] = R.drawable.scene9;
@@ -143,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         imageSet5[4] = R.drawable.scene1;
         imageSet5[5] = R.drawable.scene7;
         imageSet5[6] = R.drawable.actor9;
-        imageSet5[7] = R.drawable.actor10;
+        imageSet5[7] = R.drawable.actor1;
         imageSet5[8] = R.drawable.actor4;
         int imageSet6[] = new int[9];
         imageSet6[0] = R.drawable.scene3;
@@ -157,70 +170,70 @@ public class MainActivity extends AppCompatActivity {
         imageSet6[8] = R.drawable.actor1;
 
         String  actorSet1[] = new String[3];
-        actorSet1[0] = "Christian Bale";
-        actorSet1[1] = "Robert Downey Jr.";
-        actorSet1[2] = "Nicolas Cage";
+        actorSet1[0]=actorSet[3];
+        actorSet1[1]=actorSet[1];
+        actorSet1[2]=actorSet[7];
         String actorSet2[] = new String[3];
-        actorSet2[0] = "Antonio Banderas";
-        actorSet2[1] = "Johnny Depp";
-        actorSet2[2] = "Orlando Bloom";
+        actorSet2[0]=actorSet[4];
+        actorSet2[1]=actorSet[7];
+        actorSet2[2]=actorSet[3];
         String actorSet3[] = new String[3];
-        actorSet3[0] = "Orlando Bloom";
-        actorSet3[1] = "Robert Downey Jr.";
-        actorSet3[2] = "Nicolas Cage";
+        actorSet3[0]=actorSet[8];
+        actorSet3[1]=actorSet[3];
+        actorSet3[2]=actorSet[1];
         String actorSet4[] = new String[3];
-        actorSet4[0] = "Antonio Banderas";
-        actorSet4[1] = "Johnny Depp";
-        actorSet4[2] = "Christian Bale";
+        actorSet4[0]=actorSet[8];
+        actorSet4[1]=actorSet[7];
+        actorSet4[2]=actorSet[6];
         String actorSet5[] = new String[3];
-        actorSet5[0] = "Johnny Depp";
-        actorSet5[1] = "Nicolas Cage";
-        actorSet5[2] = "Antonio Banderas";
+        actorSet5[0]=actorSet[9];
+        actorSet5[1]=actorSet[1];
+        actorSet5[2]=actorSet[4];
         String actorSet6[] = new String[3];
-        actorSet6[0] = "Antonio Banderas";
-        actorSet6[1] = "Orlando Bloom";
-        actorSet6[2] = "Nicolas Cage";
+        actorSet6[0]=actorSet[2];
+        actorSet6[1]=actorSet[9];
+        actorSet6[2]=actorSet[1];
 
-        Movie movie = new Movie("Finding Dory", "Animation, Kids & Family", "2016",R.drawable.dory, imageSet1, actorSet1);
+        Movie movie = new Movie("Finding Dory", "Animation, Kids & Family", "2016",R.drawable.dory, imageSet5, actorSet5);
         movieList.add(movie);
 
-        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.drawable.inside, imageSet1, actorSet2);
+        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.drawable.inside, imageSet1, actorSet1);
         movieList.add(movie);
 
-        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.shaun, imageSet3, actorSet3);
+        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.shaun, imageSet2, actorSet2);
         movieList.add(movie);
 
-        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015",R.drawable.maritian, imageSet6, actorSet4);
+        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015",R.drawable.maritian, imageSet3, actorSet3);
         movieList.add(movie);
 
-        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015",R.drawable.misson, imageSet5, actorSet3);
+        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015",R.drawable.misson, imageSet4, actorSet4);
         movieList.add(movie);
 
-        movie = new Movie("Up", "Animation", "2009",R.drawable.up, imageSet5, actorSet6);
+        movie = new Movie("Up", "Animation", "2009",R.drawable.up, imageSet5, actorSet5);
         movieList.add(movie);
 
-        movie = new Movie("The LEGO Movie", "Animation", "2014",R.drawable.lego, imageSet2, actorSet5);
+        movie = new Movie("The LEGO Movie", "Animation", "2014",R.drawable.lego, imageSet6, actorSet6);
         movieList.add(movie);
 
-        movie = new Movie("Iron Man", "Action & Adventure", "2008",R.drawable.ironman, imageSet4, actorSet3);
+        movie = new Movie("Iron Man", "Action & Adventure", "2008",R.drawable.ironman, imageSet3, actorSet3);
         movieList.add(movie);
 
-        movie = new Movie("Aliens", "Science Fiction", "1986",R.drawable.aliens, imageSet4, actorSet3);
+        movie = new Movie("Aliens", "Science Fiction", "1986",R.drawable.aliens, imageSet4, actorSet4);
         movieList.add(movie);
 
-        movie = new Movie("Chicken Run", "Animation", "2000",R.drawable.chicken, imageSet6, actorSet1);
+        movie = new Movie("Chicken Run", "Animation", "2000",R.drawable.chicken, imageSet6, actorSet6);
         movieList.add(movie);
 
-        movie = new Movie("Back to the Future", "Science Fiction", "1985",R.drawable.back, imageSet5, actorSet3);
+        movie = new Movie("Back to the Future", "Science Fiction", "1985",R.drawable.back, imageSet4, actorSet4);
         movieList.add(movie);
 
-        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981",R.drawable.raiders, imageSet5, actorSet2);
+        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981",R.drawable.raiders, imageSet5, actorSet5);
         movieList.add(movie);
 
-        movie = new Movie("Goldfinger", "Action & Adventure", "1965",R.drawable.goldfinge, imageSet3, actorSet6);
+        movie = new Movie("Goldfinger", "Action & Adventure", "1965",R.drawable.goldfinge, imageSet6, actorSet6);
         movieList.add(movie);
 
-        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014",R.drawable.guardians, imageSet1, actorSet5);
+        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014",R.drawable.guardians, imageSet1, actorSet1);
         movieList.add(movie);
 
         if(mAdapter!=null)

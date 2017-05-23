@@ -49,18 +49,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:numStars="5"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.461"
         android:scaleX="0.5"
         android:scaleY="0.5"
         android:stepSize="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintLeft_toRightOf="@+id/textview_rating"
-        android:layout_marginLeft="8dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.461" />
 
     <TextView
         android:id="@+id/textview_rating"
